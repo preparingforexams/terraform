@@ -33,7 +33,7 @@ jobs:
     if: success() && github.ref != 'refs/heads/main'
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
-      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
