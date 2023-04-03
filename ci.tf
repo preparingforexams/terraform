@@ -6,6 +6,7 @@ resource "google_service_account" "github_actions_access" {
 resource "google_project_iam_member" "github_actions_roles" {
   for_each = toset([
     "roles/iam.securityReviewer",
+    "roles/iam.serviceAccountViewer",
     "roles/pubsub.admin",
     "roles/storage.objectAdmin",
   ])
