@@ -3,14 +3,15 @@ resource "google_service_account" "github_actions_access" {
   display_name = "GitHub Actions"
 }
 
-resource "google_project_iam_member" "github_actions_gcs" {
+resource "google_project_iam_member" "github_actions_roles" {
+  for_each = toset([
+    "roles/iam.securityReviewer",
+    "roles/pubsub.admin",
+    "roles/storage.objectAdmin",
+  ])
   project = google_service_account.github_actions_access.project
-  role    = "roles/storage.objectAdmin"
+  role    = each.key
   member  = google_service_account.github_actions_access.member
-  condition {
-    expression = "resource.name == 'prep-terraform-state'"
-    title      = "Restrict to TF state"
-  }
 }
 
 resource "google_service_account_key" "github_actions" {
