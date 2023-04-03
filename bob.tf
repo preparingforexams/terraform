@@ -27,4 +27,3 @@ resource "github_actions_secret" "bob_gsa" {
   secret_name     = "SERVICE_ACCOUNT_JSON_B64"
   plaintext_value = google_service_account_key.bob.private_key
 }
-
