@@ -3,6 +3,16 @@ resource "google_service_account" "github_actions_access" {
   display_name = "GitHub Actions"
 }
 
+resource "google_project_iam_member" "github_actions_gcs" {
+  project = google_service_account.github_actions_access.project
+  role    = "roles/storage.objectAdmin"
+  member  = google_service_account.github_actions_access.member
+  condition {
+    expression = "resource.name == 'prep-terraform-state'"
+    title      = "Restrict to TF state"
+  }
+}
+
 resource "google_service_account_key" "github_actions" {
   service_account_id = google_service_account.github_actions_access.account_id
 }

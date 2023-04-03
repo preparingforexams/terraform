@@ -6,7 +6,7 @@ resource "google_service_account" "moderator_bot" {
 resource "google_project_iam_member" "moderator_consumer" {
   project = google_service_account.moderator_bot.project
   role    = google_project_iam_custom_role.consumer.id
-  member  = "serviceAccount:${google_service_account.moderator_bot.email}"
+  member  = google_service_account.moderator_bot.member
 }
 
 resource "google_pubsub_subscription" "horoscopes_moderator" {

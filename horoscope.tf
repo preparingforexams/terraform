@@ -11,7 +11,7 @@ resource "google_service_account" "horoscope_bot" {
 resource "google_project_iam_member" "horoscope_publisher" {
   project = google_service_account.horoscope_bot.project
   role    = "roles/pubsub.publisher"
-  member  = "serviceAccount:${google_service_account.horoscope_bot.email}"
+  member  = google_service_account.horoscope_bot.member
 }
 
 resource "google_service_account_key" "horoscope" {
