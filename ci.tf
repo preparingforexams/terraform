@@ -12,7 +12,7 @@ data "github_repository" "terraform_repo" {
 }
 
 resource "github_actions_secret" "terraform" {
-  repository  = data.github_repository.terraform_repo.name
-  secret_name = "GOOGLE_SA_JSON"
+  repository      = data.github_repository.terraform_repo.name
+  secret_name     = "GOOGLE_SA_JSON"
   plaintext_value = base64decode(google_service_account_key.github_actions.private_key)
 }
