@@ -4,8 +4,8 @@ module "misfortune_backend_repo" {
 }
 
 module "misfortune_app_repo" {
-  source                 = "./modules/repo"
-  name                   = "wheel-of-misfortune-app"
+  source = "./modules/repo"
+  name   = "wheel-of-misfortune-app"
   required_status_checks = [
     "Check Format",
     "Lint",
