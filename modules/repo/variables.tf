@@ -15,6 +15,11 @@ variable "is_public" {
   default = true
 }
 
+variable "is_archived" {
+  type = bool
+  default = false
+}
+
 variable "required_status_checks" {
   type = list(string)
   default = [
