@@ -10,7 +10,7 @@ jobs:
   fmt:
     strategy:
       matrix:
-        directory: [ ".", "modules/repo" ]
+        directory: [ ".", "modules/pubsub_channel", "modules/repo" ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

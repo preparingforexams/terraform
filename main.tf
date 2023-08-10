@@ -25,3 +25,9 @@ provider "google" {
   project = "prep-telegram-bots"
   region  = "europe-west3"
 }
+
+provider "google" {
+  alias   = "cancer"
+  project = "cancer-be-gone"
+  region  = "europe-west3"
+}
