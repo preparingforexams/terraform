@@ -61,5 +61,5 @@ resource "google_service_account_key" "cancer_runtime" {
 resource "github_actions_secret" "cancer_gsa_json" {
   repository      = module.cancer_repo.name
   secret_name     = "GSA_JSON"
-  plaintext_value = base64decode(google_service_account_key.cancer_runtime.private_key)
+  plaintext_value = google_service_account_key.cancer_runtime.private_key
 }
