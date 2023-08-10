@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: asdf-vm/actions/install@v2
-      - run: cd ${{ matrix.directory }}
       - run: terraform fmt -check
+        working-directory: ${{ matrix.directory }}
 
   validate:
     runs-on: ubuntu-latest
