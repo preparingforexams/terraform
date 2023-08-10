@@ -53,12 +53,12 @@ module "channels" {
 
 # Service Account key for runtime access
 
-resource "google_service_account_key" "github_actions" {
+resource "google_service_account_key" "cancer_runtime" {
   provider           = google.cancer
   service_account_id = google_service_account.cancer.account_id
 }
 
-resource "github_actions_secret" "terraform" {
+resource "github_actions_secret" "cancer_gsa_json" {
   repository      = module.cancer_repo.name
   secret_name     = "GSA_JSON"
   plaintext_value = base64decode(google_service_account_key.github_actions.private_key)
