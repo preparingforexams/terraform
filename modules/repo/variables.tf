@@ -16,7 +16,7 @@ variable "is_public" {
 }
 
 variable "is_archived" {
-  type = bool
+  type    = bool
   default = false
 }
 

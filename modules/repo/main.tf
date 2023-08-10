@@ -12,7 +12,7 @@ resource "github_repository" "main" {
   description = var.description
   visibility  = var.is_public ? "public" : "private"
   is_template = false
-  archived = var.is_archived
+  archived    = var.is_archived
 
   has_issues      = true
   has_discussions = false
