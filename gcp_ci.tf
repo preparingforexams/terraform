@@ -15,6 +15,18 @@ resource "google_project_iam_member" "github_actions_roles" {
   member  = google_service_account.github_actions_access.member
 }
 
+resource "google_project_iam_member" "github_actions_roles_cancer" {
+  for_each = toset([
+    "roles/iam.securityReviewer",
+    "roles/iam.serviceAccountViewer",
+    "roles/pubsub.admin",
+    "roles/storage.objectAdmin",
+  ])
+  project = google_service_account.cancer.project
+  role    = each.key
+  member  = google_service_account.github_actions_access.member
+}
+
 resource "google_service_account_key" "github_actions" {
   service_account_id = google_service_account.github_actions_access.account_id
 }
