@@ -1,8 +1,8 @@
 # Using "bob" as a short internal ID for everything in here
 
 module "bob_repo" {
-  source = "./modules/repo"
-  name = "telegram-speech-bot"
+  source      = "./modules/repo"
+  name        = "telegram-speech-bot"
   description = "TTS for all your annoyance needs"
 }
 

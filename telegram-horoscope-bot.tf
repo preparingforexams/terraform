@@ -1,8 +1,8 @@
 # Using "horoscope" as a short internal ID for everything in here
 
 module "horoscope_repo" {
-  source = "./modules/repo"
-  name = "telegram-horoscope-bot"
+  source      = "./modules/repo"
+  name        = "telegram-horoscope-bot"
   description = "Tells lies about your day"
 }
 

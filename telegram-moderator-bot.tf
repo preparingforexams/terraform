@@ -1,8 +1,8 @@
 # Using "moderator" as a short internal ID for everything in here
 
 module "moderator_repo" {
-  source = "./modules/repo"
-  name = "telegram-moderator-bot"
+  source      = "./modules/repo"
+  name        = "telegram-moderator-bot"
   description = "Jack of all trades, master of none"
 }
 
