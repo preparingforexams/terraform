@@ -76,12 +76,8 @@ resource "google_service_account_key" "moderator" {
   service_account_id = google_service_account.moderator_bot.account_id
 }
 
-data "github_repository" "moderator" {
-  name = "telegram-moderator-bot"
-}
-
 resource "github_actions_secret" "moderator_gsa" {
-  repository      = data.github_repository.moderator.name
+  repository      = github_repository.moderator.name
   secret_name     = "GSA_JSON"
   plaintext_value = google_service_account_key.moderator.private_key
 }
