@@ -16,7 +16,7 @@ variable "is_public" {
 }
 
 variable "required_status_checks" {
-  type    = list(string)
+  type = list(string)
   default = [
     "lint",
     "test",
