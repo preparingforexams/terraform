@@ -10,7 +10,7 @@ resource "github_repository" "bob" {
   has_discussions = false
   has_projects    = false
   has_wiki        = false
-  has_downloads = false
+  has_downloads   = false
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
