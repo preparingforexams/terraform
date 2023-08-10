@@ -1,48 +1,9 @@
 # Using "moderator" as a short internal ID for everything in here
 
-resource "github_repository" "moderator" {
-  name        = "telegram-moderator-bot"
+module "moderator_repo" {
+  source = "./modules/repo"
+  name = "telegram-moderator-bot"
   description = "Jack of all trades, master of none"
-  visibility  = "public"
-  is_template = false
-
-  has_issues      = true
-  has_discussions = false
-  has_projects    = false
-  has_wiki        = false
-  has_downloads   = false
-
-  allow_auto_merge       = true
-  delete_branch_on_merge = true
-
-  allow_merge_commit = false
-  allow_squash_merge = true
-  allow_rebase_merge = true
-}
-
-resource "github_branch_default" "moderator" {
-  repository = github_repository.moderator.name
-  branch     = "main"
-}
-
-resource "github_branch_protection" "moderator" {
-  repository_id = github_repository.moderator.id
-  pattern       = "main"
-
-  required_linear_history = true
-
-  required_status_checks {
-    contexts = [
-      "lint",
-      "test",
-      "build-container-image",
-    ]
-  }
-}
-
-resource "github_actions_repository_permissions" "moderator" {
-  allowed_actions = "all"
-  repository      = github_repository.moderator.name
 }
 
 resource "google_service_account" "moderator_bot" {
@@ -77,7 +38,7 @@ resource "google_service_account_key" "moderator" {
 }
 
 resource "github_actions_secret" "moderator_gsa" {
-  repository      = github_repository.moderator.name
+  repository      = module.moderator_repo.name
   secret_name     = "GSA_JSON"
   plaintext_value = google_service_account_key.moderator.private_key
 }
