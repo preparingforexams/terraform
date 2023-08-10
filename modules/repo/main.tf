@@ -39,11 +39,7 @@ resource "github_branch_protection" "main" {
   required_linear_history = true
 
   required_status_checks {
-    contexts = [
-      "lint",
-      "test",
-      "build-container-image",
-    ]
+    contexts = var.required_status_checks
   }
 }
 
