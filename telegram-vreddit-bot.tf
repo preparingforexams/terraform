@@ -50,3 +50,16 @@ module "channels" {
   name      = each.value
   providers = { google = google.cancer }
 }
+
+# Service Account key for runtime access
+
+resource "google_service_account_key" "github_actions" {
+  provider = google.cancer
+  service_account_id = google_service_account.cancer.account_id
+}
+
+resource "github_actions_secret" "terraform" {
+  repository      = module.cancer_repo.name
+  secret_name     = "GSA_JSON"
+  plaintext_value = base64decode(google_service_account_key.github_actions.private_key)
+}
