@@ -54,7 +54,7 @@ module "channels" {
 # Service Account key for runtime access
 
 resource "google_service_account_key" "github_actions" {
-  provider = google.cancer
+  provider           = google.cancer
   service_account_id = google_service_account.cancer.account_id
 }
 
