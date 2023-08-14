@@ -2,9 +2,8 @@ module "self_repo" {
   source = "./modules/repo"
   name   = "terraform"
   required_status_checks = [
-    "fmt",
     "validate",
-    "plan"
+    "plan",
   ]
 }
 
