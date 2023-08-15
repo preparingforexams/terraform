@@ -36,6 +36,16 @@ resource "google_project_iam_member" "self_roles_for_cancer_project" {
   member  = google_service_account.self.member
 }
 
+resource "google_project_iam_member" "self_roles_for_misfortune_project" {
+  for_each = toset([
+    "roles/iam.securityReviewer",
+    "roles/iam.serviceAccountViewer",
+  ])
+  project = google_service_account.misfortune.project
+  role    = each.key
+  member  = google_service_account.self.member
+}
+
 resource "google_service_account_key" "self" {
   service_account_id = google_service_account.self.account_id
 }

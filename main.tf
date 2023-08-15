@@ -31,3 +31,9 @@ provider "google" {
   project = "cancer-be-gone"
   region  = "europe-west3"
 }
+
+provider "google" {
+  alias   = "misfortune"
+  project = "misfortune"
+  region  = "europe-west3"
+}
