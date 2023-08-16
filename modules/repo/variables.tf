@@ -29,7 +29,7 @@ variable "is_archived" {
 variable "allowed_actions" {
   type        = string
   default     = "all"
-  description = "The allowed actions for GitHub Actions"
+  description = "The allowed actions for GitHub Actions [all local_only selected]"
 }
 
 variable "required_status_checks" {
