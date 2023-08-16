@@ -38,12 +38,6 @@ variable "enable_actions" {
   description = "Whether GitHub Actions is enabled"
 }
 
-variable "allowed_actions" {
-  type        = string
-  default     = "all"
-  description = "The allowed actions for GitHub Actions [all local_only selected]"
-}
-
 variable "required_status_checks" {
   type = list(string)
   default = [
