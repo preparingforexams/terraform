@@ -30,12 +30,12 @@ resource "github_repository" "main" {
 
 resource "github_branch_default" "main" {
   repository = github_repository.main.name
-  branch     = "main"
+  branch     = var.default_branch_name
 }
 
 resource "github_branch_protection" "main" {
   repository_id = github_repository.main.id
-  pattern       = "main"
+  pattern       = var.default_branch_name
 
   required_linear_history = true
 
