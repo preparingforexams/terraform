@@ -26,6 +26,12 @@ variable "is_archived" {
   default = false
 }
 
+variable "enable_actions" {
+  type        = bool
+  default     = true
+  description = "Whether GitHub Actions is enabled"
+}
+
 variable "allowed_actions" {
   type        = string
   default     = "all"

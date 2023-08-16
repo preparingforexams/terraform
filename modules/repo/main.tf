@@ -45,6 +45,7 @@ resource "github_branch_protection" "main" {
 }
 
 resource "github_actions_repository_permissions" "main" {
+  enabled         = var.enable_actions
   allowed_actions = var.allowed_actions
   repository      = github_repository.main.name
 }
