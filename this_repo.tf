@@ -5,6 +5,7 @@ module "self_repo" {
     "validate",
     "plan",
   ]
+  description = "Organization infrastructure, including GitHub repositories"
 }
 
 resource "google_service_account" "self" {
