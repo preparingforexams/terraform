@@ -54,8 +54,15 @@ resource "github_branch_protection" "blocked" {
   lock_branch    = true
 }
 
-resource "github_actions_repository_permissions" "main" {
-  enabled         = var.enable_actions
+resource "github_actions_repository_permissions" "if_enabled" {
+  count           = var.enable_actions ? 1 : 0
+  enabled         = true
   allowed_actions = "all"
   repository      = github_repository.main.name
+}
+
+resource "github_actions_repository_permissions" "if_disabled" {
+  count      = var.enable_actions ? 0 : 1
+  enabled    = false
+  repository = github_repository.main.name
 }
