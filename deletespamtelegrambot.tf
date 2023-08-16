@@ -3,5 +3,5 @@ module "deletespam_repo" {
   name                = "deletespamtelegrambot"
   default_branch_name = "master"
   enable_actions      = false
-  is_archived         = true
+  is_archived         = false
 }
