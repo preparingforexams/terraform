@@ -44,6 +44,16 @@ resource "github_branch_protection" "main" {
   }
 }
 
+resource "github_branch_protection" "blocked" {
+  for_each = toset(var.blocked_branches)
+
+  repository_id = github_repository.main.id
+  pattern       = each.key
+
+  enforce_admins = true
+  lock_branch    = true
+}
+
 resource "github_actions_repository_permissions" "main" {
   enabled         = var.enable_actions
   allowed_actions = var.allowed_actions

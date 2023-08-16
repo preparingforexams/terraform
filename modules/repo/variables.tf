@@ -16,6 +16,12 @@ variable "default_branch_name" {
   description = "The name of the default branch. Highly recommended to use the default here."
 }
 
+variable "blocked_branches" {
+  type        = list(string)
+  default     = ["master"]
+  description = "A list of branches that cannot be pushed to."
+}
+
 variable "is_public" {
   type    = bool
   default = true
