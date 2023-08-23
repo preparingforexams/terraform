@@ -1,4 +1,4 @@
 module "welcome_repo" {
-  source = "./modules/repo"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name   = "telegram-welcome-bot"
 }

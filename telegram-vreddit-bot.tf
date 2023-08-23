@@ -1,5 +1,5 @@
 module "cancer_repo" {
-  source = "./modules/repo"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name   = "telegram-vreddit-bot"
 }
 

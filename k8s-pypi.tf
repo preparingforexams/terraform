@@ -1,5 +1,5 @@
 module "pypi_repo" {
-  source = "./modules/repo"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name   = "k8s-pypi"
   required_status_checks = [
     "build-container-image",

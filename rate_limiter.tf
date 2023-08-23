@@ -1,5 +1,5 @@
 module "rate_limiter_repo" {
-  source = "./modules/repo"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name   = "rate_limiter"
   required_status_checks = [
     "test (3.9)",
