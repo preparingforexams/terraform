@@ -50,8 +50,9 @@ resource "github_branch_protection" "blocked" {
   repository_id = github_repository.main.id
   pattern       = each.key
 
-  enforce_admins = true
-  lock_branch    = true
+  enforce_admins   = true
+  lock_branch      = true
+  blocks_creations = true
 }
 
 resource "github_actions_repository_permissions" "if_enabled" {
