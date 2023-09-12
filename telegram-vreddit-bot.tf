@@ -42,6 +42,7 @@ module "channels" {
     "instaDownload",
     "tiktokDownload",
     "twitterDownload",
+    "vimeoDownload",
     "youtubeDownload",
     "youtubeUrlConvert",
   ])
