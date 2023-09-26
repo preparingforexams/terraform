@@ -5,4 +5,5 @@ module "annoying_repo" {
   blocked_branches    = []
   enable_actions      = false
   is_archived         = true
+  create_default_branch = false
 }
