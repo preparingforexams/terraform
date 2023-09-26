@@ -3,4 +3,5 @@ module "coinflip_repo" {
   name           = "coinflipbot"
   is_archived    = true
   enable_actions = false
+  create_default_branch = false
 }

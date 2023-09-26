@@ -6,6 +6,7 @@ module "self_repo" {
     "plan",
   ]
   description = "Organization infrastructure, including GitHub repositories"
+  create_default_branch = false
 }
 
 resource "google_service_account" "self" {

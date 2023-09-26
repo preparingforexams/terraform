@@ -4,4 +4,5 @@ module "pypi_repo" {
   required_status_checks = [
     "build-container-image",
   ]
+  create_default_branch = false
 }

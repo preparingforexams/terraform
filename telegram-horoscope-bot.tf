@@ -4,6 +4,7 @@ module "horoscope_repo" {
   source      = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name        = "telegram-horoscope-bot"
   description = "Tells lies about your day"
+  create_default_branch = false
 }
 
 resource "google_pubsub_topic" "horoscopes" {

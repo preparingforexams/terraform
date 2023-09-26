@@ -4,6 +4,7 @@ module "moderator_repo" {
   source      = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name        = "telegram-moderator-bot"
   description = "Jack of all trades, master of none"
+  create_default_branch = false
 }
 
 resource "google_service_account" "moderator_bot" {

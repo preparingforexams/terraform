@@ -4,6 +4,7 @@ module "bob_repo" {
   source      = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name        = "telegram-speech-bot"
   description = "TTS for all your annoyance needs"
+  create_default_branch = false
 }
 
 resource "google_service_account" "bob_bot" {
