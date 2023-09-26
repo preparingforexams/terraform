@@ -5,7 +5,7 @@ module "self_repo" {
     "validate",
     "plan",
   ]
-  description = "Organization infrastructure, including GitHub repositories"
+  description           = "Organization infrastructure, including GitHub repositories"
   create_default_branch = false
 }
 

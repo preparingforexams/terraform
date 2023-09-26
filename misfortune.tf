@@ -1,6 +1,6 @@
 module "misfortune_backend_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
-  name   = "wheel-of-misfortune-backend"
+  source                = "github.com/BlindfoldedSurgery/terraform-repo-module"
+  name                  = "wheel-of-misfortune-backend"
   create_default_branch = false
 }
 

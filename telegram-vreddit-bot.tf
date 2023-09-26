@@ -1,6 +1,6 @@
 module "cancer_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
-  name   = "telegram-vreddit-bot"
+  source                = "github.com/BlindfoldedSurgery/terraform-repo-module"
+  name                  = "telegram-vreddit-bot"
   create_default_branch = false
 }
 
