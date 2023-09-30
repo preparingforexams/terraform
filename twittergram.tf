@@ -5,7 +5,7 @@ module "twittergram_repo" {
   required_status_checks = [
     "lint",
     "test",
-    "build-containter-image",
+    "build-container-image",
     "SonarCloud Code Analysis",
   ]
   create_default_branch = false
