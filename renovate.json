@@ -2,13 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>preparingforexams/renovate-config"
-  ],
-  "packageRules": [
-    {
-      "matchManagers": [
-        "terraform"
-      ],
-      "automerge": true
-    }
   ]
 }
