@@ -1,6 +1,7 @@
 module "rate_limiter_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module"
-  name   = "rate_limiter"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module"
+  name        = "rate_limiter"
+  description = "Provides scaffolding for rate limited features"
   required_status_checks = [
     "codecov/patch",
     "test (3.10)",
