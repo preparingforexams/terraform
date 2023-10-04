@@ -2,10 +2,13 @@ module "rate_limiter_repo" {
   source = "github.com/BlindfoldedSurgery/terraform-repo-module"
   name   = "rate_limiter"
   required_status_checks = [
+    "codecov/patch",
     "test (3.10)",
     "test (3.11)",
+    "test (3.12)",
     "lint (3.10)",
     "lint (3.11)",
+    "lint (3.12)",
   ]
   create_default_branch = false
 }
