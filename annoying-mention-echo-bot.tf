@@ -6,4 +6,5 @@ module "annoying_repo" {
   enable_actions        = false
   is_archived           = true
   create_default_branch = false
+  protect_default_branch = false
 }
