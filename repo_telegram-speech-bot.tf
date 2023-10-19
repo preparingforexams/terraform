@@ -1,7 +1,7 @@
 # Using "bob" as a short internal ID for everything in here
 
 module "bob_repo" {
-  source                = "github.com/BlindfoldedSurgery/terraform-repo-module"
+  source                = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v1.0.0"
   name                  = "telegram-speech-bot"
   description           = "TTS for all your annoyance needs"
   create_default_branch = false
