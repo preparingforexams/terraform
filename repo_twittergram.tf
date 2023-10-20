@@ -3,8 +3,8 @@ module "twittergram_repo" {
   name        = "twittergram"
   description = "Forwards toots/mails to telegram chats"
   required_status_checks = [
-    "lint",
-    "test",
+    "lint / lint",
+    "test / test",
     "build-container-image",
     "SonarCloud Code Analysis",
   ]
