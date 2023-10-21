@@ -8,5 +8,4 @@ module "twittergram_repo" {
     "build-container-image / build",
     "SonarCloud Code Analysis",
   ]
-  create_default_branch = false
 }

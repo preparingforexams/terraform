@@ -1,7 +1,6 @@
 module "misfortune_backend_repo" {
-  source                = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v1.1.0"
-  name                  = "wheel-of-misfortune-backend"
-  create_default_branch = false
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v1.1.0"
+  name   = "wheel-of-misfortune-backend"
 }
 
 module "misfortune_app_repo" {
@@ -13,7 +12,6 @@ module "misfortune_app_repo" {
     "Build Web Package",
     "build-image",
   ]
-  create_default_branch = false
 }
 
 # IAM

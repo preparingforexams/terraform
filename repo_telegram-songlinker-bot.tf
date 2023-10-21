@@ -6,5 +6,4 @@ module "songlinker_repo" {
     "unit-test",
     "build-container-image",
   ]
-  create_default_branch = false
 }

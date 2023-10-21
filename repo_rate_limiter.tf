@@ -11,5 +11,4 @@ module "rate_limiter_repo" {
     "lint (3.11)",
     "lint (3.12)",
   ]
-  create_default_branch = false
 }
