@@ -4,11 +4,11 @@ module "rate_limiter_repo" {
   description = "Provides scaffolding for rate limited features"
   required_status_checks = [
     "codecov/patch",
-    "test (3.10)",
-    "test (3.11)",
-    "test (3.12)",
-    "lint (3.10)",
-    "lint (3.11)",
-    "lint (3.12)",
+    "test (3.10) / test",
+    "test (3.11) / test",
+    "test (3.12) / test",
+    "lint (3.10) / lint",
+    "lint (3.11) / lint",
+    "lint (3.12) / lint",
   ]
 }
