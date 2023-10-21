@@ -1,5 +1,5 @@
 module "songlinker_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v1.1.0"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v2"
   name   = "telegram-songlinker-bot"
   required_status_checks = [
     "lint",
