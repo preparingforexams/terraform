@@ -1,5 +1,5 @@
 module "rate_limiter_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v4.1.3"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v4.3.0"
   name        = "rate_limiter"
   description = "Provides scaffolding for rate limited features"
   required_status_checks = [
