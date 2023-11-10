@@ -5,10 +5,8 @@ module "rate_limiter_repo" {
   required_status_checks = [
     "codecov/patch",
     "check-commits / check",
-    "lint (3.10) / lint",
     "lint (3.11) / lint",
     "lint (3.12) / lint",
-    "test (3.10) / test",
     "test (3.11) / test",
     "test (3.12) / test",
     "test-migrations-postgres (14)",
