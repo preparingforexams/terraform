@@ -1,10 +1,10 @@
 module "misfortune_backend_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v4.3.0"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v5.0.0"
   name   = "wheel-of-misfortune-backend"
 }
 
 module "misfortune_app_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v4.3.0"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v5.0.0"
   name   = "wheel-of-misfortune-app"
   required_status_checks = [
     "Check Format",
