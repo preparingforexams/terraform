@@ -11,6 +11,7 @@ module "misfortune_app_repo" {
     "Lint",
     "Build Web Package",
     "build-image",
+    "validate-renovate-config / validate",
   ]
 }
 

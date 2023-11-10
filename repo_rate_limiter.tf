@@ -13,5 +13,6 @@ module "rate_limiter_repo" {
     "test-migrations-postgres (15)",
     "test-migrations-postgres (16)",
     "test-migrations-sqlite",
+    "validate-renovate-config / validate",
   ]
 }
