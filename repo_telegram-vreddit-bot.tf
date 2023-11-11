@@ -2,9 +2,11 @@ module "cancer_repo" {
   source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v5.0.0"
   name   = "telegram-vreddit-bot"
   required_status_checks = [
-    "lint",
-    "test",
-    "build-container-image",
+    "lint / lint",
+    "test / test",
+    "build-container-image (arm64) / build",
+    "build-container-image (amd64) / build",
+    "validate-renovate-config / validate",
   ]
 }
 
