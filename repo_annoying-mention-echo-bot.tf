@@ -1,5 +1,5 @@
 module "annoying_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v5.0.0"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v6.0.0"
   name                   = "annoying-mention-echo-bot"
   default_branch_name    = "master"
   blocked_branches       = []
