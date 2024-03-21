@@ -4,6 +4,6 @@ module "curefreedom_repo" {
   required_status_checks = [
     "helm-lint",
     "validate-renovate-config / validate",
-    "build-container-image",
+    "build-container-image / build",
   ]
 }
