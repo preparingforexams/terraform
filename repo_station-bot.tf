@@ -1,5 +1,5 @@
 module "station_bot_repo" {
-  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.1.0"
+  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.1.1"
   name                = "station-bot"
   enable_argocd_rules = true
   required_status_checks = [
