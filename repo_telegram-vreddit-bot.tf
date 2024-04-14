@@ -71,5 +71,5 @@ resource "doppler_secret" "cancer_gsa_json" {
   project = "prep"
   config  = "prd"
   name    = "CANCER_BASE_GSA_JSON"
-  value   = google_service_account_key.cancer_runtime.private_key
+  value   = base64decode(google_service_account_key.cancer_runtime.private_key)
 }

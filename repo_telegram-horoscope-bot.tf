@@ -31,5 +31,5 @@ resource "doppler_secret" "horoscope_gsa_json" {
   project = "prep"
   config  = "prd"
   name    = "HOROSCOPE_GSA_JSON"
-  value   = google_service_account_key.cancer_runtime.private_key
+  value   = base64decode(google_service_account_key.horoscope.private_key)
 }
