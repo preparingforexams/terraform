@@ -37,8 +37,9 @@ resource "google_service_account_key" "moderator" {
   service_account_id = google_service_account.moderator_bot.account_id
 }
 
-resource "github_actions_secret" "moderator_gsa" {
-  repository      = module.moderator_repo.name
-  secret_name     = "GSA_JSON"
-  plaintext_value = google_service_account_key.moderator.private_key
+resource "doppler_secret" "moderator_gsa_json" {
+  project = "prep"
+  config  = "prd"
+  name    = "MODERATOR_GSA_JSON"
+  value   = base64decode(google_service_account_key.moderator.private_key)
 }
