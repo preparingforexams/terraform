@@ -67,8 +67,9 @@ resource "google_service_account_key" "cancer_runtime" {
   service_account_id = google_service_account.cancer.account_id
 }
 
-resource "github_actions_secret" "cancer_gsa_json" {
-  repository      = module.cancer_repo.name
-  secret_name     = "GSA_JSON"
-  plaintext_value = google_service_account_key.cancer_runtime.private_key
+resource "doppler_secret" "cancer_gsa_json" {
+  project = "prep"
+  config  = "prd"
+  name    = "CANCER_BASE_GSA_JSON"
+  value   = google_service_account_key.cancer_runtime.private_key
 }

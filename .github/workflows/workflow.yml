@@ -32,6 +32,7 @@ jobs:
     concurrency: production
     if: success() && github.ref != 'refs/heads/main'
     env:
+      DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
     steps:
@@ -46,6 +47,7 @@ jobs:
     concurrency: production
     if: success() && github.ref == 'refs/heads/main'
     env:
+      DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
     steps:
