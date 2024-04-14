@@ -27,8 +27,9 @@ resource "google_service_account_key" "horoscope" {
   service_account_id = google_service_account.horoscope_bot.account_id
 }
 
-resource "github_actions_secret" "horoscope_gsa" {
-  repository      = module.horoscope_repo.name
-  secret_name     = "GSA_JSON"
-  plaintext_value = google_service_account_key.horoscope.private_key
+resource "doppler_secret" "cancer_gsa_json" {
+  project = "prep"
+  config  = "prd"
+  name    = "HOROSCOPE_GSA_JSON"
+  value   = google_service_account_key.cancer_runtime.private_key
 }
