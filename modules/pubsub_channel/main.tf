@@ -20,7 +20,7 @@ resource "google_pubsub_subscription" "subscription" {
   name  = var.name
   topic = google_pubsub_topic.topic.id
 
-  ack_deadline_seconds         = 600
+  ack_deadline_seconds         = var.ack_deadline_seconds
   enable_exactly_once_delivery = true
 
   expiration_policy {
@@ -28,13 +28,13 @@ resource "google_pubsub_subscription" "subscription" {
   }
 
   retry_policy {
-    minimum_backoff = "30s"
-    maximum_backoff = "600s"
+    minimum_backoff = "${var.minimum_backoff_seconds}s"
+    maximum_backoff = "${var.maximum_backoff_seconds}s"
   }
 
   dead_letter_policy {
     dead_letter_topic     = google_pubsub_topic.dead_letter.id
-    max_delivery_attempts = 20
+    max_delivery_attempts = var.max_delivery_attempts
   }
 }
 

@@ -55,9 +55,12 @@ module "channels" {
     "youtubeUrlConvert",
   ])
 
-  source    = "./modules/pubsub_channel"
-  name      = each.value
-  providers = { google = google.cancer }
+  source                  = "./modules/pubsub_channel"
+  name                    = each.value
+  providers               = { google = google.cancer }
+  max_delivery_attempts   = 10
+  minimum_backoff_seconds = 60
+  maximum_backoff_seconds = 600
 }
 
 # Service Account key for runtime access
