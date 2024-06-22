@@ -4,5 +4,5 @@ module "pypi_repo" {
   required_status_checks = [
     "build-container-image / build",
   ]
-  is_archived = true
+  enable_actions = false
 }
