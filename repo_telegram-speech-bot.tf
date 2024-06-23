@@ -31,3 +31,10 @@ resource "github_actions_secret" "bob_gsa" {
   secret_name     = "SERVICE_ACCOUNT_JSON_B64"
   plaintext_value = google_service_account_key.bob.private_key
 }
+
+resource "doppler_secret" "bob_gsa_json" {
+  project = "prep"
+  config  = "prd"
+  name    = "BOB_GSA_JSON"
+  value   = base64decode(google_service_account_key.bob.private_key)
+}
