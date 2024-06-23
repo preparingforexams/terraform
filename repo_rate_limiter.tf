@@ -3,6 +3,7 @@ module "rate_limiter_repo" {
   name        = "rate_limiter"
   description = "Provides scaffolding for rate limited features"
   required_status_checks = [
+    "build-migrations-container-image / build",
     "codecov/patch",
     "check-commits / check",
     "lint (3.11) / lint",
