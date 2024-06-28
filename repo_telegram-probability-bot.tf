@@ -1,4 +1,4 @@
 module "probability_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.1.1"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.2.0"
   name   = "probability-bot"
 }
