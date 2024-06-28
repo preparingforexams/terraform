@@ -5,6 +5,7 @@ module "papyrus_api_repo" {
   blocked_branches       = []
   required_status_checks = ["lint", "build_docker"]
   is_archived            = true
+  enable_argocd_rules    = false
 }
 
 module "papyrus_bot_repo" {
@@ -14,4 +15,5 @@ module "papyrus_bot_repo" {
   blocked_branches       = []
   required_status_checks = ["lint", "build"]
   is_archived            = true
+  enable_argocd_rules    = false
 }

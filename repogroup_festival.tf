@@ -5,6 +5,7 @@ module "festival_api_repo" {
   blocked_branches       = []
   required_status_checks = []
   is_archived            = true
+  enable_argocd_rules    = false
 }
 
 module "festival_bot_repo" {
@@ -14,4 +15,5 @@ module "festival_bot_repo" {
   blocked_branches       = []
   required_status_checks = ["lint", "build"]
   is_archived            = true
+  enable_argocd_rules    = false
 }

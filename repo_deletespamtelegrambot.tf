@@ -7,4 +7,5 @@ module "deletespam_repo" {
   is_archived            = true
   protect_default_branch = false
   is_public              = false
+  enable_argocd_rules    = false
 }

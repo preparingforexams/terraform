@@ -3,4 +3,5 @@ module "bildbot_repo" {
   name                   = "bildbot"
   required_status_checks = ["lint", "build"]
   is_archived            = true
+  enable_argocd_rules    = false
 }
