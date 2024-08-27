@@ -4,7 +4,10 @@ module "festival_api_repo" {
   default_branch_name    = "master"
   blocked_branches       = []
   required_status_checks = []
+  protect_default_branch = false
+  enable_actions         = false
   is_archived            = true
+  is_public              = false
   enable_argocd_rules    = false
 }
 
@@ -13,7 +16,10 @@ module "festival_bot_repo" {
   name                   = "festival-bot"
   default_branch_name    = "master"
   blocked_branches       = []
-  required_status_checks = ["lint", "build"]
+  required_status_checks = []
+  protect_default_branch = false
+  enable_actions         = false
   is_archived            = true
+  is_public              = false
   enable_argocd_rules    = false
 }
