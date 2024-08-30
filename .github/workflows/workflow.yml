@@ -25,6 +25,8 @@ jobs:
       - uses: asdf-vm/actions/install@v3
       - run: terraform init -backend=false
       - run: terraform validate
+        env:
+          GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
 
   plan:
     runs-on: ubuntu-latest
@@ -34,7 +36,7 @@ jobs:
     env:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
-      GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - uses: actions/checkout@v4
       - uses: asdf-vm/actions/install@v3
@@ -49,7 +51,7 @@ jobs:
     env:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
-      GITHUB_TOKEN: ${{ secrets.TERRAFORM_GITHUB_TOKEN }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - uses: actions/checkout@v4
       - uses: asdf-vm/actions/install@v3

@@ -21,10 +21,19 @@ terraform {
   }
 }
 
+locals {
+  gh_app_id = "Iv23lic3F7QIQ3ouYfNO"
+}
+
 provider "doppler" {}
 
 provider "github" {
   owner = "preparingforexams"
+  app_auth {
+    id              = local.gh_app_id
+    pem_file        = null
+    installation_id = "54329043"
+  }
 }
 
 provider "google" {
