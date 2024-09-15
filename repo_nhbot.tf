@@ -7,4 +7,6 @@ module "nh_repo" {
   blocked_branches       = []
   enable_actions         = false
   enable_argocd_rules    = false
+  is_archived            = true
+  is_public              = false
 }
