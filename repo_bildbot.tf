@@ -1,5 +1,5 @@
 module "bildbot_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.2.0"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.2"
   name                   = "bildbot"
   required_status_checks = []
   blocked_branches       = []

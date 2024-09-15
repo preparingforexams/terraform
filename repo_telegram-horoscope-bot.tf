@@ -1,7 +1,7 @@
 # Using "horoscope" as a short internal ID for everything in here
 
 module "horoscope_repo" {
-  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.2.0"
+  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.2"
   name                = "telegram-horoscope-bot"
   description         = "Tells lies about your day"
   enable_argocd_rules = true
