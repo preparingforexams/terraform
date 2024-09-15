@@ -1,6 +1,7 @@
 terraform {
   required_providers {
     google = {
+      source  = "hashicorp/google"
       version = "~> 6.2.0"
     }
   }
@@ -51,4 +52,3 @@ resource "google_pubsub_subscription" "dead_letter" {
     maximum_backoff = "600s"
   }
 }
-
