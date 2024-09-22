@@ -42,6 +42,7 @@ module "curefreedom_repo" {
   enable_argocd_rules    = false
   protect_default_branch = false
   enable_actions         = false
+  is_archived            = true
 
   blocked_branches       = []
   required_status_checks = []
