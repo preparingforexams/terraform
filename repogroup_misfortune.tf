@@ -8,6 +8,9 @@ module "misfortune_app_repo" {
   source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.2"
   name        = "wheel-of-misfortune-app"
   description = "Wheel of Misfortune web frontend"
+
+  enable_actions = false
+
   required_status_checks = [
     "Check Format",
     "Lint",
