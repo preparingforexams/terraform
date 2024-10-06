@@ -1,5 +1,5 @@
 module "papyrus_api_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.2"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.3"
   name                   = "papyrus-api"
   default_branch_name    = "master"
   blocked_branches       = []
@@ -9,7 +9,7 @@ module "papyrus_api_repo" {
 }
 
 module "papyrus_bot_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.2"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v7.3.3"
   name                   = "papyrus-bot"
   default_branch_name    = "master"
   blocked_branches       = []
