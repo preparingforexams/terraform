@@ -40,6 +40,19 @@ resource "google_project_iam_member" "misfortune_datastore_user" {
   member   = google_service_account.misfortune.member
 }
 
+resource "google_service_account" "misfortune_test" {
+  provider     = google.misfortune
+  account_id   = "misfortune-test"
+  display_name = "Backend Tests"
+}
+
+resource "google_project_iam_member" "misfortune_test_datastore_user" {
+  provider = google.misfortune
+  project  = google_service_account.misfortune.project
+  role     = data.google_iam_role.datastore_user.id
+  member   = google_service_account.misfortune_test.member
+}
+
 # Service Account key for runtime access
 
 resource "google_service_account_key" "misfortune_runtime" {
@@ -52,4 +65,16 @@ resource "doppler_secret" "misfortune_gsa_json" {
   config  = "prd"
   name    = "MISFORTUNE_GSA_JSON"
   value   = base64decode(google_service_account_key.misfortune_runtime.private_key)
+}
+
+# Service Account key for pipeline
+resource "google_service_account_key" "misfortune_test" {
+  provider           = google.misfortune
+  service_account_id = google_service_account.misfortune_test.account_id
+}
+
+resource "github_actions_secret" "misfortune_test_gsa_json" {
+  repository      = module.misfortune_backend_repo.name
+  secret_name     = "TEST_GSA_JSON_B64"
+  plaintext_value = google_service_account_key.misfortune_test.private_key
 }
