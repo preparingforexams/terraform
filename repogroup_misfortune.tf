@@ -9,13 +9,10 @@ module "misfortune_app_repo" {
   name        = "wheel-of-misfortune-app"
   description = "Wheel of Misfortune web frontend"
 
-  enable_actions = false
-
   required_status_checks = [
     "Check Format",
     "Lint",
     "Build Web Package",
-    "build-image",
     "validate-renovate-config / validate",
   ]
 }
