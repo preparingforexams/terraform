@@ -9,7 +9,7 @@ terraform {
   required_providers {
     doppler = {
       source  = "DopplerHQ/doppler"
-      version = "~> 1.11.0"
+      version = "~> 1.12.0"
     }
     github = {
       source  = "integrations/github"
