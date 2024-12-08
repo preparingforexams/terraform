@@ -13,7 +13,6 @@ module "misfortune_app_repo" {
     "Check Format",
     "Lint",
     "Build Web Package",
-    "validate-renovate-config / validate",
   ]
 }
 

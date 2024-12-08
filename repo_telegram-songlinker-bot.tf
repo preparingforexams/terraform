@@ -4,7 +4,6 @@ module "songlinker_repo" {
   description = "Provides links to songs on several music streaming services."
 
   required_status_checks = [
-    "validate-renovate-config / validate",
     "lint / lint",
     "integration-test / test",
     "unit-test / test",

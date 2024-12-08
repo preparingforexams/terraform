@@ -8,7 +8,6 @@ module "cancer_repo" {
     "test / test",
     "build-container-image (arm64) / build",
     "build-container-image (amd64) / build",
-    "validate-renovate-config / validate",
   ]
 }
 

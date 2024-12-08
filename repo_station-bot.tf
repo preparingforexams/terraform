@@ -5,6 +5,5 @@ module "station_bot_repo" {
   required_status_checks = [
     "test / test",
     "build-container-image / build",
-    "validate-renovate-config / validate",
   ]
 }
