@@ -5,55 +5,63 @@ on:
     branches: [ main ]
   pull_request: { }
 
-
 jobs:
+  required-meta:
+    uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
+
   fmt:
     strategy:
       matrix:
         directory: [ ".", "modules/pubsub_channel" ]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform fmt -check
         working-directory: ${{ matrix.directory }}
 
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform init -backend=false
       - run: terraform validate
         env:
           GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
 
   plan:
-    runs-on: ubuntu-latest
-    needs: [fmt, validate]
+    runs-on: ubuntu-24.04
+    needs:
+      - fmt
+      - validate
+      - required-meta
     concurrency: production
-    if: success() && github.ref != 'refs/heads/main'
+    if: github.event_name == 'pull_request'
     env:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform init
       - run: terraform plan
 
   apply:
-    runs-on: ubuntu-latest
-    needs: [fmt, validate]
+    runs-on: ubuntu-24.04
+    needs:
+      - fmt
+      - validate
+      - required-meta
     concurrency: production
-    if: success() && github.ref == 'refs/heads/main'
+    if: github.ref_name == github.event.repository.default_branch
     env:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - uses: actions/checkout@v4
-      - uses: asdf-vm/actions/install@v3
+      - uses: jdx/mise-action@v2
       - run: terraform init
       - run: terraform apply -auto-approve
