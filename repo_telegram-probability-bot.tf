@@ -4,4 +4,7 @@ module "probability_repo" {
   description                  = "Tracks distribution of random slot machine emoji in Telegram"
   is_archived                  = true
   include_required_meta_checks = false
+  enable_argocd_rules          = false
+  protect_default_branch       = false
+  required_status_checks = []
 }
