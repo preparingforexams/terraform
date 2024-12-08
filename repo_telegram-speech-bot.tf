@@ -11,7 +11,7 @@ resource "google_service_account" "bob_bot" {
   display_name = "Bob Bot"
 }
 
-resource "google_project_iam_member" "bob_publisher" {
+resource "google_project_iam_member" "bob_policies" {
   for_each = toset([
     "roles/cloudtranslate.user",
     "roles/datastore.user",
