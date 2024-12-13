@@ -1,5 +1,5 @@
 module "deletespam_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.2"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.3"
   name                         = "deletespamtelegrambot"
   default_branch_name          = "master"
   blocked_branches             = []
