@@ -1,5 +1,5 @@
 module "festival_api_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.1"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.2"
   name                         = "festival-api"
   default_branch_name          = "master"
   blocked_branches             = []
@@ -13,7 +13,7 @@ module "festival_api_repo" {
 }
 
 module "festival_bot_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.1"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.2"
   name                         = "festival-bot"
   default_branch_name          = "master"
   blocked_branches             = []
