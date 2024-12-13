@@ -6,5 +6,5 @@ module "probability_repo" {
   include_required_meta_checks = false
   enable_argocd_rules          = false
   protect_default_branch       = false
-  required_status_checks = []
+  required_status_checks       = []
 }
