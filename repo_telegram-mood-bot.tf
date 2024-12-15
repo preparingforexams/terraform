@@ -1,5 +1,5 @@
 module "mood_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.2"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v8.0.3"
   name        = "telegram-mood-bot"
   description = "Tracks people's mood."
 
