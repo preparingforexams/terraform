@@ -6,8 +6,8 @@ module "cancer_repo" {
   required_status_checks = [
     "lint / lint",
     "test / test",
-    "build-container-image (arm64) / build",
-    "build-container-image (amd64) / build",
+    "build-container-image / build-container-image (ubuntu-24.04, amd64) / build",
+    "build-container-image / build-container-image (warp-ubuntu-2404-arm64-2x, arm64) / build",
   ]
 }
 
