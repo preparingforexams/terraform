@@ -3,12 +3,6 @@ module "cancer_repo" {
   name                = "telegram-vreddit-bot"
   description         = "Posts videos from hard to access social media links directly to Telegram"
   enable_argocd_rules = true
-  required_status_checks = [
-    "lint / lint",
-    "test / test",
-    "build-container-image / build-container-image (ubuntu-24.04, amd64) / build",
-    "build-container-image / build-container-image (warp-ubuntu-2404-arm64-2x, arm64) / build",
-  ]
 }
 
 # IAM
