@@ -7,6 +7,6 @@ module "songlinker_repo" {
     "lint / lint",
     "integration-test / test",
     "unit-test / test",
-    "build-container-image / build",
+    "post-build-container-image",
   ]
 }
