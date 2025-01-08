@@ -5,7 +5,7 @@ module "twittergram_repo" {
   required_status_checks = [
     "lint / lint",
     "test / test",
-    "build-container-image / build",
+    "post-build-container-image",
     "SonarCloud Code Analysis",
   ]
 }
