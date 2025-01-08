@@ -4,6 +4,6 @@ module "station_bot_repo" {
   description = "Keeps track of visited train stations in Schleswig-Holstein"
   required_status_checks = [
     "test / test",
-    "build-container-image / build",
+    "post-build-container-image",
   ]
 }
