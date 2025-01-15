@@ -1,5 +1,5 @@
 module "hhh_diff_bot_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.1"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
   name        = "hhh-diff-bot"
   description = "Keeps a list of all Telegram group chats it's invited to"
 }
