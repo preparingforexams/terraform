@@ -1,7 +1,7 @@
 # Using "moderator" as a short internal ID for everything in here
 
 module "moderator_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
   name        = "telegram-moderator-bot"
   description = "Jack of all trades, master of none"
 }
