@@ -1,5 +1,5 @@
 module "nh_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
   name                         = "nhbot"
   description                  = "nh"
   required_status_checks       = []
@@ -13,7 +13,7 @@ module "nh_repo" {
 }
 
 module "bildbot_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
   name                         = "bildbot"
   required_status_checks       = []
   blocked_branches             = []
@@ -26,7 +26,7 @@ module "bildbot_repo" {
 }
 
 module "kwbot_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
   name                         = "kwbot"
   required_status_checks       = []
   protect_default_branch       = false
@@ -39,7 +39,7 @@ module "kwbot_repo" {
 }
 
 module "curefreedom_repo" {
-  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.2"
+  source = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
   name   = "cure-freedom-bot"
 
   enable_argocd_rules          = false
