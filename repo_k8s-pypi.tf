@@ -3,6 +3,6 @@ module "pypi_repo" {
   name        = "k8s-pypi"
   description = "Custom PyPi registry"
   required_status_checks = [
-    "build-container-image / build",
+    "post-build-container-image",
   ]
 }
