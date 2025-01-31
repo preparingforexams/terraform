@@ -4,10 +4,7 @@ module "rate_limiter_repo" {
   description = "Provides scaffolding for rate limited features"
 
   required_status_checks = [
-    "build-migrations-container-image (postgres, amd64) / build",
-    "build-migrations-container-image (postgres, arm64) / build",
-    "build-migrations-container-image (sqlite, amd64) / build",
-    "build-migrations-container-image (sqlite, arm64) / build",
+    "post-build-migrations-container-image",
     "codecov/patch",
     "check-commits / check",
     "lint (3.11) / lint",
