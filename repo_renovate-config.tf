@@ -1,5 +1,5 @@
 module "renovate_config_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.1.3"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.2.0"
   name                   = "renovate-config"
   description            = "The organization's default Renovate config"
   required_status_checks = []
