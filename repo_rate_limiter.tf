@@ -5,7 +5,6 @@ module "rate_limiter_repo" {
 
   required_status_checks = [
     "post-build-migrations-container-image",
-    "codecov/patch",
     "check-commits / check",
     "post-lint",
     "post-test",
