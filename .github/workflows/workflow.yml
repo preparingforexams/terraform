@@ -10,15 +10,11 @@ jobs:
     uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
 
   fmt:
-    strategy:
-      matrix:
-        directory: [ ".", "modules/pubsub_channel" ]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
-      - run: terraform fmt -check
-        working-directory: ${{ matrix.directory }}
+      - run: terraform fmt -check -recursive
 
   validate:
     runs-on: ubuntu-24.04
