@@ -43,3 +43,9 @@ resource "doppler_secret" "moderator_gsa_json" {
   name    = "MODERATOR_GSA_JSON"
   value   = base64decode(google_service_account_key.moderator.private_key)
 }
+
+module "moderator_gsa_secret" {
+  source                    = "./modules/gsa_secret"
+  google_service_account_id = google_service_account.moderator_bot.account_id
+  scaleway_project_id       = "f71728fd-40dd-44f2-9463-a307523dcf3c"
+}

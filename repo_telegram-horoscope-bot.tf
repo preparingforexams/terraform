@@ -33,3 +33,9 @@ resource "doppler_secret" "horoscope_gsa_json" {
   name    = "HOROSCOPE_GSA_JSON"
   value   = base64decode(google_service_account_key.horoscope.private_key)
 }
+
+module "horoscope_gsa_secret" {
+  source                    = "./modules/gsa_secret"
+  google_service_account_id = google_service_account.horoscope_bot.account_id
+  scaleway_project_id       = "646f54a3-1828-44db-abc3-128d225a6b12"
+}

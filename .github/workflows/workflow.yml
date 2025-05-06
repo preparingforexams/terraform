@@ -38,6 +38,8 @@ jobs:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
@@ -56,6 +58,8 @@ jobs:
       DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2

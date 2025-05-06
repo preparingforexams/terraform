@@ -19,6 +19,10 @@ terraform {
       source  = "hashicorp/google"
       version = "~> 6.34.0"
     }
+    scaleway = {
+      source  = "scaleway/scaleway"
+      version = "~> 2.52.0"
+    }
   }
 }
 
@@ -52,4 +56,9 @@ provider "google" {
   alias   = "misfortune"
   project = "misfortune"
   region  = "europe-west3"
+}
+
+provider "scaleway" {
+  organization_id = "b46558da-3178-499d-99c7-e67da32d616e"
+  region          = "fr-par"
 }
