@@ -33,17 +33,6 @@ resource "google_pubsub_subscription" "horoscopes_moderator" {
   }
 }
 
-resource "google_service_account_key" "moderator" {
-  service_account_id = google_service_account.moderator_bot.account_id
-}
-
-resource "doppler_secret" "moderator_gsa_json" {
-  project = "prep"
-  config  = "prd"
-  name    = "MODERATOR_GSA_JSON"
-  value   = base64decode(google_service_account_key.moderator.private_key)
-}
-
 module "moderator_gsa_secret" {
   source                    = "./modules/gsa_secret"
   google_service_account_id = google_service_account.moderator_bot.account_id
