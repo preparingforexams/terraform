@@ -22,10 +22,6 @@ resource "google_project_iam_member" "bob_policies" {
   member  = google_service_account.bob_bot.member
 }
 
-resource "google_service_account_key" "bob" {
-  service_account_id = google_service_account.bob_bot.account_id
-}
-
 module "bob_gsa_secret" {
   source                    = "./modules/gsa_secret"
   google_service_account_id = google_service_account.bob_bot.account_id
