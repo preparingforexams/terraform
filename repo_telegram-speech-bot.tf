@@ -26,19 +26,6 @@ resource "google_service_account_key" "bob" {
   service_account_id = google_service_account.bob_bot.account_id
 }
 
-resource "github_actions_secret" "bob_gsa" {
-  repository      = module.bob_repo.name
-  secret_name     = "SERVICE_ACCOUNT_JSON_B64"
-  plaintext_value = google_service_account_key.bob.private_key
-}
-
-resource "doppler_secret" "bob_gsa_json" {
-  project = "prep"
-  config  = "prd"
-  name    = "BOB_GSA_JSON"
-  value   = base64decode(google_service_account_key.bob.private_key)
-}
-
 module "bob_gsa_secret" {
   source                    = "./modules/gsa_secret"
   google_service_account_id = google_service_account.bob_bot.account_id
