@@ -38,3 +38,9 @@ resource "doppler_secret" "bob_gsa_json" {
   name    = "BOB_GSA_JSON"
   value   = base64decode(google_service_account_key.bob.private_key)
 }
+
+module "bob_gsa_secret" {
+  source                    = "./modules/gsa_secret"
+  google_service_account_id = google_service_account.bob_bot.account_id
+  scaleway_project_id       = "51c6a6f0-ffaa-49b2-8285-745772763e07"
+}
