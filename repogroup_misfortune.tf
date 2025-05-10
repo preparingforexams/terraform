@@ -50,12 +50,6 @@ resource "google_project_iam_member" "misfortune_test_datastore_user" {
 }
 
 # Service Account key for runtime access
-
-resource "google_service_account_key" "misfortune_runtime" {
-  provider           = google.misfortune
-  service_account_id = google_service_account.misfortune.account_id
-}
-
 module "misfortune_runtime_gsa_secret" {
   providers = {
     google : google.misfortune,
