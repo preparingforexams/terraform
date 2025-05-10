@@ -58,19 +58,6 @@ module "channels" {
 }
 
 # Service Account key for runtime access
-
-resource "google_service_account_key" "cancer_runtime" {
-  provider           = google.cancer
-  service_account_id = google_service_account.cancer.account_id
-}
-
-resource "doppler_secret" "cancer_gsa_json" {
-  project = "prep"
-  config  = "prd"
-  name    = "CANCER_BASE_GSA_JSON"
-  value   = base64decode(google_service_account_key.cancer_runtime.private_key)
-}
-
 module "cancer_gsa_secret" {
   providers = {
     google : google.cancer,
