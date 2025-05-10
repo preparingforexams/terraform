@@ -63,6 +63,16 @@ resource "doppler_secret" "misfortune_gsa_json" {
   value   = base64decode(google_service_account_key.misfortune_runtime.private_key)
 }
 
+module "misfortune_runtime_gsa_secret" {
+  providers = {
+    google : google.misfortune,
+  }
+
+  source                    = "./modules/gsa_secret"
+  google_service_account_id = google_service_account.misfortune.account_id
+  scaleway_project_id       = "5bdb5dbe-7474-49ba-80d2-0452652a5469"
+}
+
 # Service Account key for pipeline
 resource "google_service_account_key" "misfortune_test" {
   provider           = google.misfortune
@@ -74,3 +84,5 @@ resource "github_actions_secret" "misfortune_test_gsa_json" {
   secret_name     = "TEST_GSA_JSON_B64"
   plaintext_value = google_service_account_key.misfortune_test.private_key
 }
+
+
