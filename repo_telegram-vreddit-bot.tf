@@ -70,3 +70,10 @@ resource "doppler_secret" "cancer_gsa_json" {
   name    = "CANCER_BASE_GSA_JSON"
   value   = base64decode(google_service_account_key.cancer_runtime.private_key)
 }
+
+module "cancer_gsa_secret" {
+  source                    = "./modules/gsa_secret"
+  google_service_account_id = google_service_account.cancer.account_id
+  scaleway_project_id       = "61ba8f13-4ab9-4198-ab22-9803445b6508"
+}
+
