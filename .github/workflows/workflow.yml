@@ -35,7 +35,6 @@ jobs:
     concurrency: production
     if: github.event_name == 'pull_request'
     env:
-      DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
       SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
@@ -55,7 +54,6 @@ jobs:
     concurrency: production
     if: github.ref_name == github.event.repository.default_branch
     env:
-      DOPPLER_TOKEN: ${{ secrets.TERRAFORM_DOPPLER_TOKEN }}
       GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_JSON }}
       GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
       SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}

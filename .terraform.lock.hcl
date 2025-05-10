@@ -1,41 +1,6 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/dopplerhq/doppler" {
-  version     = "1.17.0"
-  constraints = "~> 1.17.0"
-  hashes = [
-    "h1:38Kw/rBYe31JykR9hn3BeVt++4rKtO3nuQNnXv6/VGI=",
-    "h1:4Zovl+6axVKWwtCZj6UOzryI8Wu78PjDzovjEClD4dM=",
-    "h1:58vovoOUuwhcM4epaQk7NSLVKK5YDRazCOlUVSBi/5A=",
-    "h1:7xZ0ZPjYjdHDuiEBrHfrsU7hD6AuNevxFH390aSkKG8=",
-    "h1:J9NS+8qult+SiHStVf6R48RPAEKzLJCq8IRLIPNYABo=",
-    "h1:PWOUARgsGJKptC6WYkAlXf5Vbd3nATik7DxuiL/ieTQ=",
-    "h1:ROUN6v66fMgX+0e9VkN493d/VAAXYD3i0EMn/3lpnps=",
-    "h1:XCQxXsQDfI3OKzxziqs8eBhlWL4C2pByaHP+nUDjNCk=",
-    "h1:YiUfgsA053spqsnARhsGiYwhxUiWxcjSnUH70gdFaro=",
-    "h1:ZLCr5l5yxhuCu1qN3UfGR+a5vFv3G5K0K3Uy2tJ7m9s=",
-    "h1:dUhmuk7mXUpfwoQ4p3hT37dikW4FzJzD7zfwiIWBgLc=",
-    "h1:dfrTv+fQtLWbslvlpWKiqDUNYxyvQol0dgP2OKVK8HQ=",
-    "h1:rwf0wCxaNTU6zx8fek5J0Fbx0/SJKQQlAVCpPxu8cYU=",
-    "h1:xWoKVdfAV8As8E+/Rl7uPKxxKQ32dnZ0dVOUDHb/nNI=",
-    "zh:03bfdd40ffb3b3904b23f5f4505606d3793a72f748528fc8d24c700b5cf0362e",
-    "zh:0dbdae3b6cc25f9d13a211feac4d592121bd129bbc19e0da7ef2e2ebff1f7454",
-    "zh:0e3d4bfdc2f01126c7147eb84c3a7bd353250caacbbc5023070fbcb7d27409ad",
-    "zh:25b4fe78b3681f112d09e5712b8dd30d7e27c9d6df9006058eb299e48a02c1e7",
-    "zh:277f1de00fe899f1d95484fac2958d482620bedaa090aa963e015825f3a06f4f",
-    "zh:3465886d4474d09bbe84e4660bdc4bfa25c5f3c47070e3beb559510df2f8703f",
-    "zh:3b272457a13790fadee3b7815af335837b1516a1ecece1bdb973557d25bb4d4c",
-    "zh:646609651b2afd37b0321af3a6a4e4f40046586380c2d3ba603dd4f4809cce05",
-    "zh:66bffd2edbed4323edd71ef19b88132f99998ca2fceb6a15d518dad9902d7957",
-    "zh:87a30df6bfb65d694f7dd3ac73fc1710e1c109617197ad884a075542cc3609f0",
-    "zh:9ab6082d71031d40cbbe15ebfa666e3fb7b45e0559bc5e7164388a682b7b89c1",
-    "zh:a98d2814ad61705ad4ea5910f45cb1169c1e462d73bf25a81883ea1374638105",
-    "zh:b42b4b9361245c31164ff21fba1db1b7d23e705d062ef100cdf80b4c90d6bbb8",
-    "zh:e72d0cdd3c0f22016a6da9fb53349aa853bd81fd5bb21dc8267591872f2c7d1e",
-  ]
-}
-
 provider "registry.terraform.io/hashicorp/google" {
   version     = "6.34.0"
   constraints = "~> 6.34.0"

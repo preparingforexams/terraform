@@ -7,10 +7,6 @@ terraform {
   }
 
   required_providers {
-    doppler = {
-      source  = "DopplerHQ/doppler"
-      version = "~> 1.17.0"
-    }
     github = {
       source  = "integrations/github"
       version = "~> 6.6.0"
@@ -29,8 +25,6 @@ terraform {
 locals {
   gh_app_id = "Iv23lic3F7QIQ3ouYfNO"
 }
-
-provider "doppler" {}
 
 provider "github" {
   owner = "preparingforexams"
