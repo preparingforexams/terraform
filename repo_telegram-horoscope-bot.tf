@@ -6,8 +6,3 @@ module "horoscope_repo" {
   description         = "Tells lies about your day"
   enable_argocd_rules = true
 }
-
-resource "google_pubsub_topic" "horoscopes" {
-  name                       = "horoscopes"
-  message_retention_duration = "86400s"
-}
