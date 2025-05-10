@@ -72,6 +72,10 @@ resource "doppler_secret" "cancer_gsa_json" {
 }
 
 module "cancer_gsa_secret" {
+  providers = {
+    google : google.cancer,
+  }
+
   source                    = "./modules/gsa_secret"
   google_service_account_id = google_service_account.cancer.account_id
   scaleway_project_id       = "61ba8f13-4ab9-4198-ab22-9803445b6508"
