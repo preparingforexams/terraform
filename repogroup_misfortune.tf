@@ -56,13 +56,6 @@ resource "google_service_account_key" "misfortune_runtime" {
   service_account_id = google_service_account.misfortune.account_id
 }
 
-resource "doppler_secret" "misfortune_gsa_json" {
-  project = "prep"
-  config  = "prd"
-  name    = "MISFORTUNE_GSA_JSON"
-  value   = base64decode(google_service_account_key.misfortune_runtime.private_key)
-}
-
 module "misfortune_runtime_gsa_secret" {
   providers = {
     google : google.misfortune,
