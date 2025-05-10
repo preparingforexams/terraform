@@ -71,5 +71,3 @@ resource "github_actions_secret" "misfortune_test_gsa_json" {
   secret_name     = "TEST_GSA_JSON_B64"
   plaintext_value = google_service_account_key.misfortune_test.private_key
 }
-
-
