@@ -35,35 +35,3 @@ resource "google_project_iam_member" "cancer_publisher" {
   role     = "roles/pubsub.publisher"
   member   = "serviceAccount:${google_service_account.cancer.email}"
 }
-
-# Pub/Sub
-
-module "channels" {
-  for_each = toset([
-    "download",
-    "instaDownload",
-    "tiktokDownload",
-    "twitterDownload",
-    "vimeoDownload",
-    "youtubeDownload",
-    "youtubeUrlConvert",
-  ])
-
-  source                  = "./modules/pubsub_channel"
-  name                    = each.value
-  providers               = { google = google.cancer }
-  max_delivery_attempts   = 10
-  minimum_backoff_seconds = 60
-  maximum_backoff_seconds = 600
-}
-
-# Service Account key for runtime access
-module "cancer_gsa_secret" {
-  providers = {
-    google : google.cancer,
-  }
-
-  source                    = "./modules/gsa_secret"
-  google_service_account_id = google_service_account.cancer.account_id
-  scaleway_project_id       = "61ba8f13-4ab9-4198-ab22-9803445b6508"
-}
