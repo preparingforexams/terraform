@@ -3,7 +3,7 @@ module "vodka_repo" {
   name        = "vodka-az"
   description = "Suggests long drink combinations with Vodka"
 
-  is_archived                  = false
+  is_archived                  = true
   include_required_meta_checks = false
   enable_argocd_rules          = false
   protect_default_branch       = false
