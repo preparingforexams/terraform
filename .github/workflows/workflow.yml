@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
       - run: terraform fmt -check -recursive
 
   validate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
       - run: terraform init -backend=false
       - run: terraform validate
         env:
@@ -41,7 +41,7 @@ jobs:
       SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v5
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
       - run: terraform init
       - run: terraform plan
 
@@ -60,6 +60,6 @@ jobs:
       SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v5
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
       - run: terraform init
       - run: terraform apply -auto-approve
