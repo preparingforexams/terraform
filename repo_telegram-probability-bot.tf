@@ -1,5 +1,5 @@
 module "probability_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.0"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.1"
   name                         = "probability-bot"
   description                  = "Tracks distribution of random slot machine emoji in Telegram"
   is_archived                  = true

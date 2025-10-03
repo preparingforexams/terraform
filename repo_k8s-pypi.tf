@@ -1,5 +1,5 @@
 module "pypi_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.0"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.1"
   name        = "k8s-pypi"
   description = "Custom PyPi registry"
   required_status_checks = [

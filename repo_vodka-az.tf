@@ -1,5 +1,5 @@
 module "vodka_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.0"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.1"
   name        = "vodka-az"
   description = "Suggests long drink combinations with Vodka"
 
