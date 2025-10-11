@@ -50,3 +50,25 @@ provider "scaleway" {
   organization_id = "b46558da-3178-499d-99c7-e67da32d616e"
   region          = "fr-par"
 }
+
+removed {
+  from = module.papyrus_api_repo.github_branch_default.main
+}
+removed {
+  from = module.papyrus_api_repo.github_branch_protection.main
+}
+removed {
+  from = module.papyrus_bot_repo.github_branch_default.main
+}
+removed {
+  from = module.papyrus_bot_repo.github_branch_protection.main
+}
+removed {
+  from = module.probability_repo.github_branch_default.main
+}
+removed {
+  from = module.probability_repo.github_branch_protection.main
+}
+removed {
+  from = module.probability_repo.github_repository_ruleset.blocked
+}
