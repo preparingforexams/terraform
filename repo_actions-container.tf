@@ -1,5 +1,5 @@
 module "actions_container_repo" {
-  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v9.4.1"
+  source                 = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.0.1"
   name                   = "actions-container"
   description            = "Mirrors the tags of the BlindfoldedSurgery repo with the same name"
   is_public              = true
