@@ -1,5 +1,5 @@
 module "coinflip_repo" {
-  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.0.1"
+  source                       = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.1.0"
   name                         = "coinflipbot"
   required_status_checks       = []
   blocked_branches             = []
