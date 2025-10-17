@@ -1,5 +1,5 @@
 module "songlinker_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.1.0"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.1.1"
   name        = "telegram-songlinker-bot"
   description = "Provides links to songs on several music streaming services."
 
