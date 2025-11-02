@@ -30,11 +30,11 @@ provider "github" {
   owner             = "preparingforexams"
   parallel_requests = true
 
-  # app_auth {
-  #   id              = local.gh_app_id
-  #   pem_file        = null
-  #   installation_id = "54329043"
-  # }
+  app_auth {
+    id              = local.gh_app_id
+    pem_file        = null
+    installation_id = "54329043"
+  }
 }
 
 provider "google" {
