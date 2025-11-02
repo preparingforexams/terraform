@@ -32,4 +32,5 @@ module "curefreedom_repo" {
 
   is_archive_prepared = true
   is_archived         = true
+  is_public           = false
 }
