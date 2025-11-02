@@ -5,6 +5,7 @@ module "horoscope_repo" {
   name        = "telegram-horoscope-bot"
   description = "Tells lies about your future"
 
+  is_public                    = false
   is_archived                  = true
   include_required_meta_checks = false
   enable_argocd_rules          = false
