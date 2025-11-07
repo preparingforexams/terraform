@@ -4,4 +4,5 @@ module "welcome_repo" {
   description = "Welcomes users to a group chat"
 
   is_archive_prepared = true
+  is_public           = false
 }
