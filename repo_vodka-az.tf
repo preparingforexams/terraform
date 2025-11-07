@@ -4,6 +4,6 @@ module "vodka_repo" {
   description = "Suggests long drink combinations with Vodka"
 
   is_public           = false
-  is_archived         = false
+  is_archived         = true
   is_archive_prepared = true
 }

@@ -6,6 +6,6 @@ module "horoscope_repo" {
   description = "Tells lies about your future"
 
   is_public           = false
-  is_archived         = false
+  is_archived         = true
   is_archive_prepared = true
 }
