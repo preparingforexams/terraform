@@ -13,7 +13,7 @@ terraform {
     }
     google = {
       source  = "hashicorp/google"
-      version = "~> 7.10.0"
+      version = "~> 7.11.0"
     }
     scaleway = {
       source  = "scaleway/scaleway"
