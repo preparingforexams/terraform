@@ -1,5 +1,5 @@
 module "transcription_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.1.1"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v11.0.0"
   name        = "telegram-transcription-bot"
   description = " Voice message transcription for Telegram, based on Azure Cognitive Services"
 }
