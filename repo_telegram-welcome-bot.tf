@@ -1,5 +1,5 @@
 module "welcome_repo" {
-  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v10.1.1"
+  source      = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v11.0.0"
   name        = "telegram-welcome-bot"
   description = "Welcomes users to a group chat"
 
