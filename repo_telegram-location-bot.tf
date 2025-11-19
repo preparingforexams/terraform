@@ -1,5 +1,5 @@
 module "location_bot_repo" {
-  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v11.0.0"
+  source              = "github.com/BlindfoldedSurgery/terraform-repo-module?ref=v11.1.0"
   name                = "telegram-location-bot"
   description         = "Allows users to set their own admin title"
   enable_argocd_rules = true
